@@ -136,32 +136,6 @@ a:hover {
     color: rgba(255, 255, 255, .6);
 }
 
-.slogan {
-    font-size: 22px;
-    max-width: 700px;
-    margin: auto;
-}
-
-.citation {
-    font-size: 19px;
-    font-weight: bold;
-    font-style: italic;
-   
-}
-
-.citation-author {
-    font-size: 14px;
-    font-weight: bold;
-   
-}
-
-.portfolio {
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 30px;
-    text-transform: initial ;
-}
-
 .d-bloc .a-btn:hover,
 .d-bloc .navbar a:hover,
 .d-bloc .navbar-brand:hover,
@@ -309,12 +283,63 @@ a:hover {
     padding-left: 0;
 }
 
+footer .row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+@media (max-width: 650px) {
+    .social {
+        display: grid !important;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "before before"
+        "twitter facebook"
+        'dribble instagram';
+    }
+}
+
+.social::before {
+    grid-area: before;
+}
+
+#facebook {
+    grid-area: facebook;
+}
+
+#dribble {
+    grid-area: dribble;
+}
+
+#instagram {
+    grid-area: instagram;
+}
+
+#twitter {
+    grid-area: twitter;
+}
+
+footer .col-sm-4 {
+    padding: 1rem 0rem;
+}
+
 #bloc-1-hero h1 {
     font-size: 32px;
 }
 
+#bloc-3-what-i-do p {
+    font-size: 1.4rem;
+}
+
+#bloc-3-what-i-do a {
+    font-size: 1.6rem;
+}
+
 .navbar {
     margin-bottom: 0;
+    z-index: 1;
 }
 
 .navbar-brand {
@@ -332,6 +357,11 @@ a:hover {
     display: inline;
 }
 
+.navbar-brand:hover {
+    background-color: rgb(253, 208, 186);
+    transition: background-color 0.5s ease-in-out;
+}
+
 .navbar-brand img[src$=svg] {
     min-width: 100px;
 }
@@ -344,6 +374,69 @@ a:hover {
     padding-top: 2px;
     margin-right: -16px;
     float: right;
+    z-index: 1;
+}
+
+@media (min-width: 770px) {
+.navbar .nav li:hover {
+    background-color: #F3976C;
+    transition: background-color 0.3s ease-in;
+}
+}
+
+footer .col-sm-12 .row .col-sm-4 li a {
+    line-height: 2rem;
+    font-weight: bold;
+    line-height: 4rem !important;
+    display: block;
+}
+
+footer .col-sm-4 li:hover {
+    color: red;
+}
+
+footer .col-sm-4 a:hover {
+    text-decoration: underline;
+}
+
+#bloc-5-cta h2 {
+    opacity: 100%;
+    font-weight: 700;
+    background-color: rgba(165, 147, 99, 0.7);
+    padding: 40px 40px 40px 40px;
+    max-width: 500px;
+    margin: auto;
+}
+
+#bloc-8 p {
+    color: #424242 !important;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 1rem 2rem;
+}
+
+.text-center img {
+    width: 50vw;
+    max-width: 1000px;
+    min-width: 300px
+}
+
+footer .row .col-sm-4 {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+@media (max-width: 650px) {
+    footer .row .col-sm-4 {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    #bloc-8 p {
+    padding: 0rem;
+    margin: 0rem;
+}
 }
 
 .nav > li {
@@ -355,8 +448,6 @@ a:hover {
 .navbar-nav .open .dropdown-menu > li > a {
     text-align: inherit;
 }
-
-
 
 .nav > li a:hover,
 .nav > li a:focus {
@@ -385,6 +476,7 @@ a:hover {
 .nav-invert .navbar-brand {
     float: right;
     position: relative;
+    z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -501,7 +593,14 @@ button {
 }
 
 .icon-md {
+    color: #424242 !important;
     font-size: 30px!important;
+}
+
+.icon-md:hover {
+    color: black !important;
+    transition: all 0.3s ease-in;
+    text-shadow: 1px 1px 1px rgb(175, 156, 156);
 }
 
 .icon-lg {
@@ -541,15 +640,13 @@ button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    opacity: 1;
+    opacity: 0;
     z-index: 500;
     transition: all .3s ease-in-out;
-    background: #000;
 }
 
 .scrollToTop span {
     margin-top: 6px;
-    color: white;
 }
 
 .showScrollTop {
@@ -574,6 +671,7 @@ a[data-lightbox]:hover::before {
     background: rgba(0, 0, 0, .6);
     color: #FFF;
     font-weight: 100;
+    z-index: 1;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -618,6 +716,7 @@ a[data-lightbox]:hover img {
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 20;
     background: rgba(0, 0, 0, .5);
     border: none;
     line-height: 30px;
@@ -640,6 +739,7 @@ a[data-lightbox]:hover img {
     transition: all .2s ease-in-out;
     position: absolute;
     top: 45%;
+    z-index: 1;
     opacity: 0.4;
 }
 
@@ -675,7 +775,7 @@ label,
 a {
     font-family: "helvetica";
     font-weight: 400;
-    color: #575757!important;
+    color: #424242!important;
 }
 
 .container {
@@ -701,7 +801,7 @@ a {
 }
 
 p {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .tight-width-whitespace {
@@ -717,7 +817,6 @@ p {
 .cta-hero {
     margin-top: 22px;
     color: #FFFFFF!important;
-    background: black !important;
     text-transform: uppercase;
     padding: 12px 28px 12px 28px;
     font-size: 16px;
@@ -725,14 +824,7 @@ p {
 }
 
 .social {
-    color: white !important;
-    max-width: 500px;
     margin: auto auto auto auto;
-}
-
-.social a {
-    color: white !important;
-    padding-left: 10px;
 }
 
 
@@ -790,26 +882,9 @@ h4 {
 }
 
 .bold-link {
-    font-size: 18px;
-    padding: 18px;
-    border-radius: 200px;
-    background: black;
-    margin: 20px !important;
-    font-weight: 700;
+    font-weight: 900;
+    text-decoration: underline!important;
 }
-
-.bold-link:hover {
-    background: white !important;
-    color: black !important;
-    transition: 0.3s;
-}
-
-.bold-link:hover a {
-    background: white !important;
-    color: black !important;
-    transition: 0.3s;
-}
-
 
 .bgc-white {
     background-color: #FFFFFF;
@@ -820,21 +895,21 @@ h4 {
 }
 
 .bgc-atomic-tangerine {
-    background-color: black !important;
+    background-color: #F3976C;
 }
 
 .tc-white {
-    color: white !important;
+    color: #F8B89B!important;
 }
 
 .btn-atomic-tangerine {
     background: #F3976C;
-    color: #FFFFFF!important;
+    color: #333333!important;
 }
 
 .btn-atomic-tangerine:hover {
-    background: white!important;
-    color: black!important;
+    background: #333333!important;
+    color: #F3976C!important;
 }
 
 .ltc-white {
@@ -857,6 +932,33 @@ h4 {
     color: #364577!important;
     border-color: #364577!important;
 }
+
+.blockquote {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.blockquote blockquote {
+    color: rgba(0, 0, 0, .65);
+    margin-bottom: 0rem;
+}
+
+.blockquote p {
+    font-size: 1.4rem;
+}
+
+#bloc-4-portfolio h3 {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    text-transform: default;
+    color: rgba(0, 0, 0, .5) !important;
+}
+
+#bloc-4-portfolio p {
+    font-size: 1.3rem;
+}
+
+
 
 .bg-dots-bg {
     background-image: url("img/dots-bg.png");
@@ -1047,7 +1149,9 @@ h4 {
     .a-block {
         padding: 0 10px;
     }
-  
+    .btn-dwn {
+        display: none;
+    }
     .voffset {
         margin-top: 5px;
     }
